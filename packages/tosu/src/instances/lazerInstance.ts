@@ -212,6 +212,8 @@ export class LazerInstance extends AbstractInstance {
         if (this.isDestroyed) return;
         global.updatePreciseState();
 
+        const { menu, beatmapPP } = this.getServices(['menu', 'beatmapPP']);
+
         switch (global.status) {
             case GameState.play:
                 if (global.playTime < 150) {
@@ -222,6 +224,7 @@ export class LazerInstance extends AbstractInstance {
                     gameplay.updateKeyOverlay();
                 }
                 gameplay.updateHitErrors();
+
                 break;
             default:
                 gameplay.resetKeyOverlay();

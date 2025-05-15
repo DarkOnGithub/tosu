@@ -295,7 +295,39 @@ export interface Combo2 {
 
 export interface TosuPreciseAnswer {
     currentTime: number;
-    keys: KeyOverlay;
+    hits: {
+        three_hundred: number;
+        one_hundred: number;
+        fifty: number;
+        miss: number;
+        slider_break: number;
+    };
+    scores: {
+        score: number;
+    };
+    precisions: {
+        precision: number;
+        accuracy: number;
+        unstableRate: number;
+        max_combo: number;
+        current_combo: number;
+        current_score: number;
+    };
+    beatmap: {
+        title: string;
+        difficulty: string;
+        checksum: string;
+        time: {
+            live: number;
+            first_object_time: number;
+            last_object_time: number;
+        };
+    };
+    hitErrors: number[];
+}
+
+export interface PreciseTourney {
+    ipcId: number;
     hitErrors: number[];
     tourney: PreciseTourney[];
 }
