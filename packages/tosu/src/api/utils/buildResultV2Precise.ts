@@ -13,8 +13,8 @@ export const buildResult = (
 
     const { global, gameplay, menu } = osuInstance.getServices([
         'gameplay',
-        'global',
-        'menu'
+        'menu',
+        'global'
     ]);
 
     return {
@@ -33,6 +33,7 @@ export const buildResult = (
         title: menu.title,
         difficulty: menu.difficulty,
         checksum: menu.checksum,
-        hitErrors: gameplay.hitErrors
+        hitErrors: gameplay.hitErrors,
+        game_state: global.status
     };
 };

@@ -309,6 +309,7 @@ export interface TosuPreciseAnswer {
     title: string;
     difficulty: string;
     checksum: string;
+    game_state: number;
     hitErrors: number[];
 }
 
