@@ -294,35 +294,21 @@ export interface Combo2 {
 }
 
 export interface TosuPreciseAnswer {
+    epoch: number;
     currentTime: number;
-    hits: {
-        three_hundred: number;
-        one_hundred: number;
-        fifty: number;
-        miss: number;
-        slider_break: number;
-    };
-    scores: {
-        score: number;
-    };
-    precisions: {
-        precision: number;
-        accuracy: number;
-        unstableRate: number;
-        max_combo: number;
-        current_combo: number;
-        current_score: number;
-    };
-    beatmap: {
-        title: string;
-        difficulty: string;
-        checksum: string;
-        time: {
-            live: number;
-            first_object_time: number;
-            last_object_time: number;
-        };
-    };
+    three_hundred: number;
+    one_hundred: number;
+    fifty: number;
+    miss: number;
+    slider_break: number;
+    score: number;
+    accuracy: number;
+    unstableRate: number;
+    max_combo: number;
+    current_combo: number;
+    title: string;
+    difficulty: string;
+    checksum: string;
     hitErrors: number[];
 }
 
@@ -330,24 +316,6 @@ export interface PreciseTourney {
     ipcId: number;
     hitErrors: number[];
     tourney: PreciseTourney[];
-}
-
-export interface PreciseTourney {
-    ipcId: number;
-    keys: KeyOverlay;
-    hitErrors: number[];
-}
-
-interface KeyOverlay {
-    k1: KeyOverlayButton;
-    k2: KeyOverlayButton;
-    m1: KeyOverlayButton;
-    m2: KeyOverlayButton;
-}
-
-interface KeyOverlayButton {
-    isPressed: boolean;
-    count: number;
 }
 
 export interface Performance {
